@@ -12,12 +12,37 @@
           <div class="row">
               <form class="formTable" action="" method="post">
                   <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" name="username">
+                    <label for="username">Username:*</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
                   </div>
                   <div class="form-group">
-                    <label for="username">Password:</label>
-                    <input type="text" class="form-control" id="username" name="username">
+                    <label for="password">Password:*</label>
+                    <input type="text" class="form-control" id="password" name="username" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="firstname">First Name:*</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastname">Last Name:*</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" required>
+                  </div>
+                  <div><hr></div>
+                  <div class="form-group">
+                    <label for="street">Street:*</label>
+                    <input type="text" class="form-control" id="street" name="street" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="city">City:*</label>
+                    <input type="text" class="form-control" id="city" name="city" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="state">State:*</label>
+                    <input type="text" class="form-control" id="state" name="state" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="zipcode">Zipcode:*</label>
+                    <input type="text" class="form-control" id="zipcode" name="zipcode" required>
                   </div>
                   <div class="form-group">
                     <input type="submit" id="register" class="btn btn-primary" value="Register">
