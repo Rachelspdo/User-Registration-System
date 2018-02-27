@@ -56,9 +56,16 @@
         <script>
              $( document ).ready(function() {
                  $('#register').click(function(e) {
-                     alert ("Testing");
-                     var username = $('#username').val();
                      
+                     // Getting form input data
+                     var username = $('#username').val();
+                     var password = $('#password').val();
+                     var firstname = $('#firstname').val();
+                     var lastname = $('#lastname').val();
+                     var street = $('#street').val();
+                     var city = $('#city').val();
+                     var state = $('#state').val();
+                     var zipcode = $('#zipcode').val();
                  });
              });
         </script>
