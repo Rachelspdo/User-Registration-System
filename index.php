@@ -86,6 +86,19 @@
                      } else if (zipcode == "") {
                          alert("Please enter a zipcode.");
                      } 
+                     
+                     /* Save data to server
+                     $.ajax({
+                          method: "POST",
+                          url: "some.php",
+                          data: { name: "John", location: "Boston" }})*/
+                     
+                     $.ajax({
+                         method: "POST",
+                         url: "data.php", //Post to data.php file
+                         data: { form_username : username, form_password : password, form_firstname : firstname, form_lastname : lastname, form_street : street, form_city : city, form_state : state, form_zipcode : zipcode },
+                         dataType: "json",
+                     })
                  });
              });
         </script>
