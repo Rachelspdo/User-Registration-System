@@ -8,7 +8,23 @@
     </head>
     <body>
         <!-- content -->
-        
+        <div class="container">
+          <div class="row">
+              <form class="formTable" action="" method="post">
+                  <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                  </div>
+                  <div class="form-group">
+                    <label for="username">Password:</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" id="register" class="btn btn-primary" value="Register">
+                  </div>
+              </form>
+            </div>
+        </div>
         
         
         
