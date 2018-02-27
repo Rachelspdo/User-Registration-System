@@ -23,6 +23,21 @@ if (isset($_POST['form_username'])) {
         echo "Connected successfully";
     }
     
+    // set a test variable.
+    $username = 'Username001';
+    $password = 'test';
+    $firstname = 'Walt';
+    $lastname = 'Street';
+    $street = '123 Fake Street';
+    $city = 'Westminster';
+    $state = 'CA';
+    $zipcode = '99999';
+    
+    // Perform query, insert input to database
+    $insert_input = mysqli_query($db, "Insert into register_account (username, password, first_name, last_name) 
+                                    values ('".$username."', '".$password."', '".$firstname."', '".$lastname."' )");
+    
+
 }
 
 
