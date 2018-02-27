@@ -56,7 +56,8 @@
         <script>
              $( document ).ready(function() {
                  $('#register').click(function(e) {
-                     
+                     // Prevent form from submitting
+                     e.preventDefault();
                      // Getting form input data
                      var username = $('#username').val();
                      var password = $('#password').val();

@@ -16,6 +16,12 @@ if (isset($_POST['form_username'])) {
     // mysqli_connect("localhost","my_user","my_password","my_db");
     $db = mysqli_connect($serverhost, $dbuser, $dbpassword, $dbname);
     
+    // Check connection
+    if (!$db) {
+        die("Connection failed: " . mysqli_connect_error());
+    } else {
+        echo "Connected successfully";
+    }
     
 }
 
