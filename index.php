@@ -64,8 +64,8 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo '
                                 <tr>
-                                    <td>'.$row['user_id'].'<td>
-                                    <td>'.$row['username'].'<td>
+                                    <td>ID: '.$row['user_id'].'<td><br>
+                                    <td>'.$row['username'].'<td><br>
                                 </tr>
                         ';
                     }
