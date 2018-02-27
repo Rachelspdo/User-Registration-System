@@ -23,15 +23,15 @@ if (isset($_POST['form_username'])) {
         echo "Connected successfully";
     }
     
-    // set a test variable.
-    $username = 'Username001';
-    $password = 'test';
-    $firstname = 'Walt';
-    $lastname = 'Street';
-    $street = '123 Fake Street';
-    $city = 'Westminster';
-    $state = 'CA';
-    $zipcode = '99999';
+    // set variable to hold json data.
+    $username = $_POST['form_username'];
+    $password = $_POST['form_password'];
+    $firstname = $_POST['form_firstname'];
+    $lastname = $_POST['form_lastname'];
+    $street = $_POST['form_street'];
+    $city = $_POST['form_city'];
+    $state = $_POST['form_state'];
+    $zipcode = $_POST['form_zipcode'];
     
     // Perform query, insert input to database
     $sql_insert = "INSERT INTO register_account (username, password, `first_name`, `last_name`) 
