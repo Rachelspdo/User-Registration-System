@@ -34,9 +34,20 @@ if (isset($_POST['form_username'])) {
     $zipcode = '99999';
     
     // Perform query, insert input to database
-    $insert_input = mysqli_query($db, "Insert into register_account (username, password, first_name, last_name) 
-                                    values ('".$username."', '".$password."', '".$firstname."', '".$lastname."' )");
+    $sql_insert = "INSERT INTO register_account (username, password, `first_name`, `last_name`) 
+                                    VALUES ('".$username."', '".$password."', '".$firstname."', '".$lastname."' )";
     
+    $insert_input = mysqli_query($db, $sql_insert);
+    
+    if ($insert_input) {
+        $lastID = mysqli_insert_id($db);
+        $sql_insert_address = "INSERT INTO user_address (user_id, street, city, state, zipcode)
+                                                    values('".$lastID."','".$street."','".$city."','".$state."','".$zipcode."')";
+        mysqli_query($db, $sql_insert_address);
+
+    }
+    
+    mysqli_close($db);
 
 }
 
