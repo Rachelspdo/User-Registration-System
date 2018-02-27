@@ -10,7 +10,7 @@
         <!-- content -->
         <div class="container">
           <div class="row">
-              <form class="formTable" action="" method="post">
+              <form class="formTable col-md-5" action="" method="post">
                   <div class="form-group">
                     <label for="username">Username:*</label>
                     <input type="text" class="form-control" id="username" name="username" required>
@@ -48,6 +48,30 @@
                     <input type="submit" id="register" class="btn btn-primary" value="Register">
                   </div>
               </form>
+              <div class="col-md-5">
+                  <?php 
+                  // Connect to databse
+                    $serverhost = "localhost";
+                    $dbname = 'project001';
+                    $dbuser = 'root';
+                    $dbpassword = '';
+
+                    $db = mysqli_connect($serverhost, $dbuser, $dbpassword, $dbname);
+                    // Get id and username to display on page
+                    $sql_query = "SELECT * FROM register_account INNER JOIN address ON register_account.id = address.user_id";
+                    $result = mysqli_query($db, $sql_query);
+                    // looping through all of the accounts and display them
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '
+                                <tr>
+                                    <td>'.$row['user_id'].'<td>
+                                    <td>'.$row['username'].'<td>
+                                </tr>
+                        ';
+                    }
+                  mysqli_close($db);
+                  ?>
+              </div>
             </div>
         </div>
         
