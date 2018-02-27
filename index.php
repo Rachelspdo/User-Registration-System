@@ -66,6 +66,26 @@
                      var city = $('#city').val();
                      var state = $('#state').val();
                      var zipcode = $('#zipcode').val();
+                     
+                     
+                     // Alert user when form is not filled
+                     if (username == "") {
+                         alert("Please enter a username."); 
+                     } else if (password == ""){
+                         alert("Please enter a password.");
+                     } else if (firstname == ""){
+                         alert("Please enter a firstname.");
+                     } else if (lastname == ""){
+                         alert("Please enter a lastname.");
+                     } else if (street == ""){
+                         alert("Please enter a street.");
+                     } else if (city == ""){
+                         alert("Please enter a city.");
+                     } else if (state == ""){
+                         alert("Please enter a state.");
+                     } else if (zipcode == "") {
+                         alert("Please enter a zipcode.");
+                     } 
                  });
              });
         </script>
