@@ -10,7 +10,7 @@
         <!-- content -->
         <div class="container">
           <div class="row">
-              <form class="formTable col-md-5" action="" method="post">
+              <form class="formTable" action="" method="post">
                   <div class="form-group">
                     <label for="username">Username:*</label>
                     <input type="text" class="form-control" id="username" name="username" required>
@@ -44,42 +44,44 @@
                     <label for="zipcode">Zipcode:*</label>
                     <input type="text" class="form-control" id="zipcode" name="zipcode" required>
                   </div>
+                  <div><hr></div>
+                  <a id="show-form">+ Add Second Address </a>
+                  <div id="second-address" style="display:none">
+                      <div class="form-group"> 
+                    <label for="street2">Street:</label>
+                    <input type="text" class="form-control" id="street2" name="street2" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="city2">City:</label>
+                    <input type="text" class="form-control" id="city2" name="city2" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="state2">State:</label>
+                    <input type="text" class="form-control" id="state2" name="state2" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="zipcode2">Zipcode:</label>
+                    <input type="text" class="form-control" id="zipcode2" name="zipcode2" required>
+                  </div>
+                  </div>
                   <div class="form-group">
                     <input type="submit" id="register" class="btn btn-primary" value="Register">
                   </div>
               </form>
-              <div class="col-md-5">
-                  <?php 
-                  // Connect to databse
-                    $serverhost = "localhost";
-                    $dbname = 'project00';
-                    $dbuser = 'root';
-                    $dbpassword = '';
-
-                    $db = mysqli_connect($serverhost, $dbuser, $dbpassword, $dbname);
-                    // Get id and username to display on page
-                    $sql_query = "SELECT * FROM register_account INNER JOIN user_address ON register_account.id = user_address.user_id";
-                    $result = mysqli_query($db, $sql_query);
-                    // looping through all of the accounts and display them
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo '
-                                <tr>
-                                    <td>ID: '.$row['user_id'].'<td><br>
-                                    <td>'.$row['username'].'<td><br>
-                                </tr>
-                        ';
-                    }
-                  mysqli_close($db);
-                  ?>
-              </div>
-            </div>
+            </div> 
         </div>
         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script>
              $( document ).ready(function() {
+                 $('#show-form').click(function() {
+                    //$("#second-address").css("display","block");
+                     $("#second-address").toggle();
+                     });
+            
                  $('#register').click(function(e) {
+                     
                      // Prevent form from submitting
                      //e.preventDefault();
                      // Getting form input data
