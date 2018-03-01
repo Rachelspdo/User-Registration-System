@@ -10,7 +10,8 @@
         <!-- content -->
         <div class="container">
           <div class="row">
-              <form class="formTable" action="" method="post">
+              <div class="col-md-3"></div>
+              <form class="formTable col-md-6" action="" method="post">
                   <div class="form-group">
                     <label for="username">Username:*</label>
                     <input type="text" class="form-control" id="username" name="username" required>
@@ -68,6 +69,10 @@
                     <input type="submit" id="register" class="btn btn-primary" value="Register">
                   </div>
               </form>
+              <div class="col-md-2">
+                  <a id="show-id">Existed ID</a>
+                  <div id="content"></div> 
+              </div>
             </div> 
         </div>
         
@@ -79,7 +84,10 @@
                     //$("#second-address").css("display","block");
                      $("#second-address").toggle();
                      });
-            
+                 // Show existed ID
+                 $('#show-id').click(function() {
+                     $('#content').load('getdata.php');
+                 });
                  $('#register').click(function(e) {
                      
                      // Prevent form from submitting
@@ -129,6 +137,8 @@
                                 //alert('test');
                             }
                      });
+                     
+                     
                  });
              });
         </script>
