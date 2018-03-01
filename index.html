@@ -28,42 +28,46 @@
                     <label for="lastname">Last Name:*</label>
                     <input type="text" class="form-control" id="lastname" name="lastname" required>
                   </div>
-                  <div><hr></div>
                   <div class="form-group">
-                    <label for="street">Street:*</label>
-                    <input type="text" class="form-control" id="street" name="street" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="city">City:*</label>
-                    <input type="text" class="form-control" id="city" name="city" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="state">State:*</label>
-                    <input type="text" class="form-control" id="state" name="state" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="zipcode">Zipcode:*</label>
-                    <input type="text" class="form-control" id="zipcode" name="zipcode" required>
-                  </div>
-                  <div><hr></div>
-                  <a id="show-form">+ Add Second Address </a>
-                  <div id="second-address" style="display:none">
-                      <div class="form-group"> 
-                    <label for="street2">Street:</label>
-                    <input type="text" class="form-control" id="street2" name="street2" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="city2">City:</label>
-                    <input type="text" class="form-control" id="city2" name="city2" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="state2">State:</label>
-                    <input type="text" class="form-control" id="state2" name="state2" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="zipcode2">Zipcode:</label>
-                    <input type="text" class="form-control" id="zipcode2" name="zipcode2" required>
-                  </div>
+                    <input id="next" class="btn btn-primary" value="Address (Optional)">
+                      <div id="first-address" style="display:none">
+                          <div class="form-group">
+                            <label for="street">Street:</label>
+                            <input type="text" class="form-control" id="street" name="street" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="city">City:</label>
+                            <input type="text" class="form-control" id="city" name="city" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="state">State:</label>
+                            <input type="text" class="form-control" id="state" name="state" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="zipcode">Zipcode:</label>
+                            <input type="text" class="form-control" id="zipcode" name="zipcode" required>
+                          </div>
+                          <div><hr></div>
+                          <a id="show-form">+ Add Second Address </a>
+                          <div id="second-address" style="display:none">
+                              <div class="form-group"> 
+                                <label for="street2">Street:</label>
+                                <input type="text" class="form-control" id="street2" name="street2" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="city2">City:</label>
+                                <input type="text" class="form-control" id="city2" name="city2" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="state2">State:</label>
+                                <input type="text" class="form-control" id="state2" name="state2" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="zipcode2">Zipcode:</label>
+                                <input type="text" class="form-control" id="zipcode2" name="zipcode2" required>
+                              </div>
+                          </div>
+                      </div>
                   </div>
                   <div class="form-group">
                     <input type="submit" id="register" class="btn btn-primary" value="Register">
@@ -80,6 +84,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script>
              $( document ).ready(function() {
+                 $('#next').click(function() {
+                    //$("#second-address").css("display","block");
+                     $("#first-address").show();
+                     });
                  $('#show-form').click(function() {
                     //$("#second-address").css("display","block");
                      $("#second-address").toggle();
@@ -116,14 +124,6 @@
                          alert("Please enter a firstname.");
                      } else if (lastname == ""){
                          alert("Please enter a lastname.");
-                     } else if (street == ""){
-                         alert("Please enter a street.");
-                     } else if (city == ""){
-                         alert("Please enter a city.");
-                     } else if (state == ""){
-                         alert("Please enter a state.");
-                     } else if (zipcode == "") {
-                         alert("Please enter a zipcode.");
                      } 
                      
                      // Save data to server
