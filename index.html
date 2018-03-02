@@ -29,7 +29,7 @@
                     <input type="text" class="form-control" id="lastname" name="lastname" required>
                   </div>
                   <div class="form-group">
-                    <input id="next" class="btn btn-primary" value="Address (Optional)">
+                      <a id="next" class="btn btn-primary"> Address (Optional) </a>
                       <div id="first-address" style="display:none">
                           <div class="form-group">
                             <label for="street">Street:</label>
@@ -85,8 +85,7 @@
         <script>
              $( document ).ready(function() {
                  $('#next').click(function() {
-                    //$("#second-address").css("display","block");
-                     $("#first-address").show();
+                     $("#first-address").toggle();
                      });
                  $('#show-form').click(function() {
                     //$("#second-address").css("display","block");
@@ -97,7 +96,6 @@
                      $('#content').load('getdata.php');
                  });
                  $('#register').click(function(e) {
-                     
                      // Prevent form from submitting
                      //e.preventDefault();
                      // Getting form input data
