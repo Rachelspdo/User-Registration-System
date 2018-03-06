@@ -18,7 +18,9 @@
 First table named **register_account** with 5 columes: id (set AUTO_INCREMENT under EXTRA), username, password, first_name, and last_name.
     
 Second table named **user_address** with 10 columes: id (set AUTO_INCREMENT under EXTRA), user_id, street, city, state, zipcode, street_2, city_2, state_2, zipcode_2
-    
+
+    NOTE: Set all columes except id with TYPE Varchar and LENGTH 255
+    
 ## RUN XAMPP
 
 1. Open Xampp
